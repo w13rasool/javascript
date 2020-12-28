@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start counting after loading the page</title>
+    <style>
+        @font-face {
+    font-family: 'Iransans';
+    src: url('fonts/Iransans.woff');
+url('fonts/Iransans.eot') format('eot'),
+url('fonts/Iransans.woff2') format('woff2'),
+url('fonts/Iransans.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+        body{
+            direction: ltr;
+            margin: 0;
+            padding: 0;
+        }
+        #main{
+            direction: ltr;
+            width: 800px;
+           
+            background-color: aliceblue;
+            text-align: center;
+            margin: 0 auto;
+          
+        }
+        .tamren{
+            background-color: rgb(216, 216, 216);
+            line-height: 35px;
+            font-family: Iransans;
+            font-size: 10px;  
+            padding-top:15px ;         
+        }
+        #nam-1{
+            background-color: rgb(0, 186, 211);
+            font-family: Iransans;
+            font-size: 29px; 
+            padding: 15px 0;
+        }
+    </style>
+
+    <script>
+               setInterval(setval, 1000);
+                var i = 1;
+                function setval() {
+                    var x = document.getElementById("nam-1");
+                    x.innerHTML = i++;
+                }
+    </script>
+ 
+</head>
+<body>
+<div id="main">
+    <h1>Start counting after loading the page</h1>
+     <!--تمرین1-->
+    <div class="tamren">
+        <h2>تمرین 1 :  می خواهیم تابعی بنویسم که وقتی صفحه لود شد شروع به شمارش کند </h2>
+        <div id="nam-1" class="namaesh"></div>
+    </div> <!--t1-->
+</div>
+</body>
+</html>
