@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        #main {
+            margin: 0 auto;
+            width: 400px;
+        }
+        table {
+            margin: 100px;
+            border: 1px solid #cccccc;
+        }
+        .input_bt {
+            width: 50px;
+            height: 40px;
+            background-color: #71a1d0;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.17);
+            border: 1px solid #cccccc;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .input_bt2 {
+            width: 50px;
+            height: 40px;
+            background-color: #283c51;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.17);
+            border: 1px solid #cccccc;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .input_bt3 {
+            width: 100px;
+            height: 40px;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.17);
+            border: 1px solid #cccccc;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            background: url("left-arrow.png")no-repeat center #283c51;
+        }
+        .input_bt4 {
+            width: 100px;
+            height: 40px;
+            background-color: #283c51;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.17);
+            border: 1px solid #cccccc;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #nama {
+            background-color: #eeeeee;
+            padding: 10px 5px;
+            border: 1px solid #cccccc;
+            width: 95%;
+            height: 45px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <table border="0" width="200" cellspacing="0">
+        <tr>
+            <td colspan="5" style="text-align: center">
+                <input id="nama" type="text" readonly value="">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" id="number-1" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="2" id="number-2" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="3" id="number-3" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="/" class="input_bt2" onclick="fun(this.value)"></td>
+            <td><input type="button" value="*" class="input_bt2" onclick="fun(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" id="number-4" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="5" id="number-5" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="6" id="number-6" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="+" class="input_bt2" onclick="fun(this.value)"></td>
+            <td><input type="button" value="-" class="input_bt2" onclick="fun(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" id="number-7" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="8" id="number-8" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="9" id="number-9" class="input_bt" onclick="fun(this.value)"></td>
+            <td colspan="2"><input type="button" value="" class="input_bt3" onclick="fun4()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" id="number-0" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="." id="Decimals" class="input_bt" onclick="fun(this.value)"></td>
+            <td><input type="button" value="c" id="delete" class="input_bt" onclick="fun3()"></td>
+            <td colspan="2"><input type="button" value="=" class="input_bt4" onclick="fun2()"></td>
+        </tr>
+    </table>
+    <script>
+        var sum = '';
+        function fun(val) {
+            var x = val;
+            sum = sum + x;
+            document.getElementById("nama").value = sum;
+        }
+        function fun2() {
+           var y= document.getElementById("nama").value;
+           document.getElementById("nama").value= eval(y);
+           sum=document.getElementById("nama").value;
+        }
+        function fun3() {
+            document.getElementById("nama").value='';
+            sum='';
+        }
+        function fun4() {
+            var oldStr= document.getElementById("nama").value;
+            var n= oldStr.substr(0, oldStr.length-1);
+            document.getElementById("nama").value=n;
+            sum=n;
+        }
+    </script>
+</div>
+</body>
+</html>
